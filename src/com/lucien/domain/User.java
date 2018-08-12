@@ -14,6 +14,8 @@ public class User {
     private int state;
     private String code;
 
+    public User() {}
+
     public User(String uid, String username, String password, String name, String email, String telephone, Date birthday, String sex, int state, String code) {
         this.uid = uid;
         this.username = username;

@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class JDBCUtils {
-    private static ComboPooledDataSource ds = new ComboPooledDataSource();
+    private static ComboPooledDataSource ds = new ComboPooledDataSource("c3p0");
     private static ThreadLocal<Connection> tl = new ThreadLocal<>();
 
     /**
