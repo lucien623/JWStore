@@ -14,6 +14,9 @@ public class BaseServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        super.service(req, resp);
         String method = req.getParameter("method");
+        if(method == null || "".equals(method) || method.trim().equals("")) {
+            method = "execute";
+        }
         Class clazz = this.getClass();
         try {
             Method md = clazz.getDeclaredMethod(method, HttpServletRequest.class, HttpServletResponse.class);
@@ -24,5 +27,9 @@ public class BaseServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public String execute(HttpServletRequest req, HttpServletResponse resp) {
+        return null;
     }
 }
