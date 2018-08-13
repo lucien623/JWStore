@@ -10,4 +10,6 @@ public interface UserService {
      * @param user
      */
     void userRegist(User user) throws SQLException;
+
+    User userLogin(User user) throws SQLException;
 }

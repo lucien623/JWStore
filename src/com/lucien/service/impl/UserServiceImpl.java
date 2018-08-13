@@ -14,4 +14,14 @@ public class UserServiceImpl implements UserService{
         UserDao userDao = new UserDaoImpl();
         userDao.userRegist(user);
     }
+
+    @Override
+    public User userLogin(User user) throws SQLException {
+        UserDao userDao = new UserDaoImpl();
+        User userResp = userDao.userLogin(user);
+        if(userResp == null) {
+            throw new RuntimeException("密码有误");
+        }
+        return userResp;
+    }
 }
